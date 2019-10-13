@@ -3,17 +3,17 @@ var obj = {
     data: 'string',
     property: 'value'
 }
-// for (var a in obj) { 
-//     console.log("a: ", obj[a]);
-// }
-// for (var a in array) { 
-//     console.log("a: ", array[a]);
-// }
-// for (var i of obj) {
-//     console.log(i);
-// }
+for (var a in obj) {
+    // console.log("a: ", obj[a]);
+}
+for (var a in array) {
+    // console.log("a: ", array[a]);
+}
+for (var i of obj) {
+    // console.log(i);
+}
 
-// REST Parameters
+/* Rest Parameters  (it allows us to represent an indefinite number of arguments as an array) */
 function sum(a, b, ...numbers) {
     // console.log(numbers);
     var result = 0;
@@ -24,16 +24,19 @@ function sum(a, b, ...numbers) {
 }
 // console.log(sum(5, 10, 20, 50));
 
+/* Optional Parameters */
 function sum2(a, b) {
     return a + b;
 }
 // console.log(sum2(10));
 
+/* Default Parameters */
 function sum3(a, b = 10) {
     return a + b;
 }
 // console.log(sum3(10));
 
+/* Object destructuring */
 var student = {
     name: "Taha",
     class: "BS",
@@ -46,17 +49,10 @@ var student2 = {
     name: "Ali",
 };
 // console.log(student2);
-// var name = student.name;
-// var _class = student.class;
 var { name, city } = student;
 // console.log(city);
 
-// function sumBy2(a) {
-//     return a + 2;
-// }
-// function sumBy5(a) {
-//     return a + 5;
-// }
+/* Closure functions */
 function generator(num) {
     return function (a) {
         return a + num;
@@ -73,21 +69,23 @@ var sumBy5 = generator(5);
 //     }, 1000);
 // }
 
-// function greetings(name) {
-//     return function () {
-//         console.log("hello " + name);
-//     }
-// }
-// var greetTaha = greetings("Taha");
+function greetings(name) {
+    return function () {
+        console.log("hello " + name);
+    }
+}
+var greetTaha = greetings("Taha");
 
-// var name = "Name";
-// function fn(cb) {
-//     cb();
-// }
-// fn(function () {
-//     console.log(name);
-// });
+/* Callbacks */
+var name = "Hamza";
+function fn(cb) {
+    cb();
+}
+fn(function () {
+    // console.log(name);
+});
 
+/* Generator functions and yeild */
 function* gn() {
     yield 10;
     yield 20;
@@ -96,10 +94,11 @@ function* gn() {
 var data = gn();
 // console.log(data.next());
 
+/* Error Handling try{}catch(){} */
 var object = {};
 try {
-    console.log(object.name.count);
+    // console.log(object.name.count);
 }
-catch(err) {
-    console.log('err: ', err);
+catch (err) {
+    // console.log('err: ', err);
 }
